@@ -1,0 +1,199 @@
+@import url('../styles/variables.css');
+
+.page-container {
+    padding: 20px;
+    background-color: var(--color-background);
+    min-height: calc(100vh - 100px);
+}
+
+
+.table-container {
+    overflow-x: auto;
+    background-color: var(--color-background-card);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid var(--color-border);
+    padding: 10px;
+    text-align: left;
+}
+
+
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-quantity {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 2px;
+}
+
+.btn-quantity:hover {
+    background-color: var(--color-secondary-hover);
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid var(--color-border-input);
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.btn-delete-fp {
+    background-color: var(--color-danger);
+    color: var(--color-text-light);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-delete-fp:hover {
+    background-color: var(--color-danger-hover);
+}
+
+.btn-add-fp {
+    background-color: var(--color-success);
+    color: var(--color-text-light);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-add-fp:hover {
+    background-color: var(--color-success-hover);
+}
+
+.btn-whatsapp {
+    background-color: var(--color-success); /* WhatsApp green */
+    color: var(--color-text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0; /* Center the button */
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--color-success-hover);
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; /* mb-20 */
+    border: 1px solid var(--color-border-input);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.error-message {
+    color: var(--color-danger);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 15px;
+    }
+
+    .carrinho-container, .table-container {
+        padding: 15px;
+        margin-bottom: 20px; /* Ajuste de margem */
+    }
+
+    .form-control {
+        margin-bottom: 15px; /* Ajuste de margem */
+    }
+
+    /* Força a tabela a se comportar como blocos em telas muito pequenas */
+    .data-table, .data-table thead, .data-table tbody, .data-table th, .data-table td, .data-table tr {
+        display: block;
+    }
+
+    .data-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .data-table tr {
+        margin-bottom: 10px;
+        border: 1px solid var(--color-border);
+        border-radius: 5px;
+    }
+
+    .data-table td {
+        border: none;
+        border-bottom: 1px solid var(--color-border);
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    .data-table td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* Labels para as células da tabela de produtos */
+    .data-table th:nth-of-type(1):before { content: "Descrição"; }
+    .data-table th:nth-of-type(2):before { content: "Preço Unit."; }
+    .data-table th:nth-of-type(3):before { content: "Ação"; }
+
+    /* Labels para as células da tabela do carrinho */
+    .data-table tfoot td[colspan="3"] {
+        text-align: left; /* Ajusta o alinhamento do total no rodapé */
+        padding-left: 10px; /* Adiciona um pouco de padding */
+    }
+
+    .data-table td:nth-of-type(1):before { content: "Produto"; }
+    .data-table td:nth-of-type(2):before { content: "Preço Unit."; }
+    .data-table td:nth-of-type(3):before { content: "Quantidade"; }
+    .data-table td:nth-of-type(4):before { content: "Subtotal"; }
+    .data-table td:nth-of-type(5):before { content: "Ação"; }
+
+    .quantity-controls {
+        justify-content: flex-end; /* Alinha os controles de quantidade à direita */
+    }
+
+    .btn-whatsapp {
+        width: 100%; /* Botão WhatsApp ocupa a largura total */
+        margin: 20px 0 0; /* Ajusta margem */
+    }
+}
+
+@media (max-width: 480px) {
+    .page-container h2 {
+        font-size: 1.8em;
+    }
+}

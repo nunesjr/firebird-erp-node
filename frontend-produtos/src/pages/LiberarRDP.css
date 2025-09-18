@@ -1,0 +1,100 @@
+/* Styles for LiberarRDP.js */
+
+.rdp-container {
+    padding: 30px;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: var(--cor-fundo-branco);
+    border-radius: var(--raio-borda-lg);
+    box-shadow: var(--sombra-leve);
+    text-align: center;
+}
+
+.rdp-title {
+    color: var(--cor-texto-principal);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--cor-texto-secundario);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--cor-borda-input);
+    border-radius: var(--raio-borda-sm);
+    font-size: 1rem;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.ip-detection-error {
+    color: var(--cor-aviso);
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.rdp-button {
+    background-color: var(--cor-sucesso);
+    color: var(--cor-branco);
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--raio-borda-md);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.rdp-button:hover:not(:disabled) {
+    background-color: var(--cor-sucesso-borda);
+}
+
+.rdp-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.message-box {
+    padding: 15px;
+    border-radius: var(--raio-borda-md);
+    margin-top: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.message-box.success {
+    background-color: #e6ffe6; /* Light green */
+    color: var(--cor-sucesso);
+    border: 1px solid var(--cor-sucesso);
+}
+
+.message-box.error {
+    background-color: #ffe6e6; /* Light red */
+    color: var(--cor-perigo);
+    border: 1px solid var(--cor-perigo);
+}
+
+.message-box.warning {
+    background-color: #fffbe6; /* Light yellow */
+    color: var(--cor-aviso);
+    border: 1px solid var(--cor-aviso);
+}
+
+/* Common styles that might have been in App.css */

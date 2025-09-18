@@ -1,0 +1,83 @@
+/* Styles for LoginPage.js */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--cor-fundo-suave);
+    padding: 20px;
+}
+
+.login-box {
+    background-color: var(--cor-fundo-branco);
+    padding: 40px;
+    border-radius: var(--raio-borda-lg);
+    box-shadow: var(--sombra-media);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid var(--cor-borda); /* Added border for visibility */
+}
+
+.login-box h2 {
+    color: var(--cor-texto-principal);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--cor-texto-secundario);
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--cor-borda-input);
+    border-radius: var(--raio-borda-sm);
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: var(--cor-fundo-claro);
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(var(--cor-primaria), 0.3); /* Slightly stronger focus shadow */
+}
+
+
+
+.btn-login {
+    background-color: var(--cor-sucesso);
+    color: var(--cor-branco);
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--raio-borda-md);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow to transition */
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: var(--sombra-leve); /* Added subtle shadow */
+}
+
+.btn-login:hover:not(:disabled) {
+    background-color: var(--cor-sucesso-borda);
+    box-shadow: var(--sombra-media); /* Stronger shadow on hover */
+}
+
+.btn-login:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}

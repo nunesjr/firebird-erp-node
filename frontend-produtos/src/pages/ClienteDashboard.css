@@ -1,0 +1,14 @@
+@import url('../styles/variables.css');
+
+.dashboard-intro {
+  margin-bottom: 30px;
+  font-size: 1.1em;
+  color: var(--color-text-secondary);
+}
+
+.chart-container {
+  background-color: var(--color-background-card);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

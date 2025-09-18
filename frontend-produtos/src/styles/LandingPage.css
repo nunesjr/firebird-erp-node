@@ -1,0 +1,221 @@
+/* Converted to rem units (1rem = 16px) */
+/* src/LandingPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('./variables.css');
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    align-items: center;
+}
+
+/* Header */
+.landing-header {
+    background: var(--color-background-card);
+    box-shadow: var(--shadow-medium);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.landing-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+}
+
+.logo-image {
+    height: 3.125rem;
+}
+
+.logo-text {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-tertiary);
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5625rem;
+}
+
+.nav-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-tertiary);
+}
+
+.btn-login {
+    background: var(--color-tertiary);
+    color: var(--color-background-card);
+    padding: 0.625rem 1.5625rem;
+    border-radius: 1.5625rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover {
+    background: var(--color-tertiary-hover);
+    transform: translateY(-0.125rem);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop') no-repeat center center;
+    background-size: cover;
+    color: var(--color-background-card);
+    text-align: center;
+    padding: 7.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.hero-section h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    text-shadow: 0.125rem 0.125rem 0.5rem rgba(0,0,0,0.6);
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    max-width: 43.75rem;
+}
+
+.btn-whatsapp {
+    background: var(--color-warning);
+    color: var(--color-text);
+    padding: 0.9375rem 2.1875rem;
+    border-radius: 1.875rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-whatsapp:hover {
+    background: var(--color-warning);
+    transform: translateY(-0.1875rem);
+}
+
+/* Sections */
+.about-section, .services-section, .contact-section {
+    padding: 5rem 1.25rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-tertiary);
+    margin-bottom: 3.125rem;
+}
+
+/* About Section */
+.about-section p {
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Services Section */
+.services-section {
+    background-color: var(--color-background-light);
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+    gap: 1.875rem;
+    margin-top: 1.875rem;
+}
+
+.card {
+    background: var(--color-background-card);
+    border-radius: 0.625rem;
+    box-shadow: var(--shadow-medium);
+    padding: 1.875rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-0.625rem);
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.15);
+}
+
+.card h4 {
+    color: var(--color-tertiary);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.9375rem;
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Footer */
+.landing-footer {
+    background: var(--color-tertiary);
+    color: var(--color-background-card);
+    text-align: center;
+    padding: 1.25rem 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 48rem) {
+    .landing-header .container {
+        flex-direction: column;
+        gap: 0.9375rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.9375rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}

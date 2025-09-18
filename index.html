@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editar Produtos</title>
+</head>
+<body>
+  <h2>Lista de Produtos</h2>
+  <table border="1" id="tabelaProdutos"></table>
+
+  <script>
+    async function carregarProdutos() {
+      const res = await fetch('http://varejaofdt.ddns.net/produtos');
+      const dados = await res.json();
+
+      let html = `<tr><th>CODIGO</th><th>DESCRICAO</th><th>F_CUSTO_REPOSICAO</th><th>AÇÃO</th></tr>`;
+      dados.forEach(produto => {
+        html += `
+          <tr>
+            <td>${produto.CODIGO}</td>
+            <td><input value="${produto.DESCRICAO}" id="desc-${produto.CODIGO}"></td>
+            <td><input type="number" step="0.0001" value="${produto.F_CUSTO_REPOSICAO}" id="custo-${produto.CODIGO}"></td>
+            <td><button onclick="salvar('${produto.CODIGO}')">Salvar</button></td>
+          </tr>`;
+      });
+      document.getElementById('tabelaProdutos').innerHTML = html;
+    }
+
+    async function salvar(codigo) {
+      const descricao = document.getElementById(`desc-${codigo}`).value;
+      const custo = parseFloat(document.getElementById(`custo-${codigo}`).value);
+      await fetch(`http://varejaofdt.ddns.net/produtos/${codigo}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ descricao, f_custo_reposicao: custo })
+      });
+      alert('Produto atualizado!');
+    }
+
+    carregarProdutos();
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/* Converted to rem units (1rem = 16px) */
+:root {
+  /* Cores Principais */
+  --color-primary: #137706bd; /* Verde do ERP */
+  --color-primary-hover: #369b36;
+  --color-secondary: #3498db; /* Azul vibrante */
+  --color-secondary-hover: #2980b9;
+  --color-tertiary: #2e7d32; /* Verde da Landing Page */
+  --color-tertiary-hover: #266a2a;
+
+  /* Cores de Fundo */
+  --color-background: #f4f6f9; /* Cinza claro */
+  --color-background-card: #ffffff;
+  --color-background-light: #f8f9fa;
+  --color-background-dark: #2c3e50; /* Azul escuro-acinzentado */
+
+  /* Cores de Texto */
+  --color-text: #333333;
+  --color-text-light: #ecf0f1;
+  --color-text-secondary: #666666;
+  --color-text-placeholder: #999999;
+
+  /* Cores de Status */
+  --color-success: #28a745;
+  --color-success-hover: #218838;
+  --color-success-background: #d4edda;
+  --color-danger: #dc3545;
+  --color-danger-hover: #c82333;
+  --color-danger-background: #f8d7da;
+  --color-warning: #ffc107;
+  --color-warning-background: #fff3cd;
+
+  /* Cores de Borda */
+  --color-border: #e0e0e0;
+  --color-border-input: #ced4da;
+
+  /* Sombras */
+  --shadow-light: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.12);
+  --shadow-heavy: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+
+  /* Raios de Borda */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+}

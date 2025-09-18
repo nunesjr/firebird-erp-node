@@ -1,0 +1,213 @@
+/* Converted to rem units (1rem = 16px) */
+/* DashboardERP.css */
+
+@import url('./variables.css');
+
+/* --- Layout Principal do ERP --- */
+.erp-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--color-background);
+    font-family: 'Inter', sans-serif; /* Mantendo a fonte existente */
+    color: var(--color-text);
+    position: relative;
+}
+
+/* --- Sidebar (Menu Lateral) --- */
+.erp-sidebar {
+    width: 15.625rem; /* Largura padrão da sidebar */
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-medium);
+    transition: width 0.3s ease; /* Para animação de recolher/expandir */
+    z-index: 1000; /* Garante que fique acima do conteúdo */
+}
+
+.erp-sidebar.collapsed {
+    width: 5rem; /* Largura quando recolhida */
+}
+
+.erp-sidebar-header {
+    padding: 1.25rem;
+    text-align: center;
+    border-bottom: 0.0625rem solid var(--color-primary-hover);
+    margin-bottom: 1.25rem;
+}
+
+.erp-sidebar-header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--color-text-light);
+    transition: opacity 0.3s ease;
+}
+
+.erp-sidebar.collapsed .erp-sidebar-header h1 {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.erp-menu-toggle {
+    background: var(--color-primary);
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    left: 15.625rem;
+    top: 0.9375rem;
+    border-radius: 0 50% 50% 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    transition: left 0.3s ease;
+}
+
+.erp-layout.menu-collapsed .erp-menu-toggle {
+    left: 5rem;
+}
+
+.erp-sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.erp-sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap; /* Evita quebra de linha */
+}
+
+.erp-sidebar-nav li a:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-background-card); /* Cor mais clara no hover */
+}
+
+.erp-sidebar-nav li a.active {
+    background-color: var(--color-secondary);
+    color: var(--color-background-card);
+    font-weight: 600;
+    border-left: 0.25rem solid var(--color-secondary-hover);
+}
+
+.erp-sidebar-nav li a .menu-icon {
+    margin-right: 0.9375rem;
+    font-size: 1.2rem;
+    width: 1.5rem; /* Garante alinhamento dos ícones */
+    text-align: center;
+    transition: margin 0.3s ease;
+}
+
+.erp-sidebar.collapsed .erp-sidebar-nav li a .menu-icon {
+    margin: 0 auto;
+}
+
+.erp-sidebar.collapsed .erp-sidebar-nav li a .menu-label {
+    display: none; /* Esconde o texto do item de menu */
+}
+
+/* --- Conteúdo Principal --- */
+.erp-main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    overflow-y: auto; /* Permite rolagem do conteúdo */
+    transition: margin-left 0.3s ease;
+}
+
+/* --- Header do Conteúdo Principal --- */
+.erp-content-header {
+    background-color: var(--color-background-card);
+    padding: 0.9375rem 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.erp-content-header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--color-primary);
+}
+
+.erp-user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+}
+
+.erp-user-info p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.erp-btn-logout {
+    background-color: var(--color-danger);
+    color: var(--color-text-light);
+    padding: 0.5rem 0.9375rem;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+.erp-btn-logout:hover {
+    background-color: var(--color-danger-hover);
+}
+
+/* --- Footer do Conteúdo Principal --- */
+.erp-footer {
+    margin-top: auto; /* Empurra o footer para o final */
+    padding: 0.9375rem 1.25rem;
+    text-align: center;
+    color: var(--color-text);
+    font-size: 0.9em;
+    border-top: 0.0625rem solid var(--color-border);
+    background-color: var(--color-background-card);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-light);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 48rem) {
+    .erp-sidebar {
+        position: absolute;
+        height: 100%;
+    }
+
+    .erp-sidebar.collapsed {
+        width: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .erp-main-content {
+        margin-left: 0;
+    }
+
+    .erp-layout.menu-collapsed .erp-main-content {
+        margin-left: 0;
+    }
+
+    .erp-menu-toggle {
+        left: 0;
+    }
+
+    .erp-layout.menu-collapsed .erp-menu-toggle {
+        left: 0;
+    }
+}
